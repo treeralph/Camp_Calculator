@@ -1,21 +1,15 @@
-package com.example.camp_calculator
+package com.example.camp_calculator.calculator
 
+import com.example.camp_calculator.numberClass
 import java.lang.IllegalArgumentException
-import kotlin.reflect.KClass
-import kotlin.reflect.full.createType
-import kotlin.reflect.full.functions
 
+/**
+ * 개인 과제 레벨1을 고려하여 작성한 코드입니다.
+ * */
 class Calculator {
 
     var result: Number? = null
     var currentOp: Int? = null
-
-    companion object {
-        val numberClass = listOf(
-            Double::class, Float::class, Long::class,
-            Int::class, Short::class, Byte::class
-        )
-    }
 
     fun addition(a: Number, b: Number): Number {
         return when(numberClass.indexOfFirst { it == a::class || it == b::class }) {

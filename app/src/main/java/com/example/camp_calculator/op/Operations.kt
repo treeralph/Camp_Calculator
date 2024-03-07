@@ -1,10 +1,11 @@
-package com.example.camp_calculator
+package com.example.camp_calculator.op
 
+import com.example.camp_calculator.numberClass
 import java.lang.IllegalArgumentException
 
 class AddOperation: AbstractOperation {
     override fun operation(a: Number, b: Number): Number {
-        return when(Calculator2.numberClass.indexOfFirst { it == a::class || it == b::class }) {
+        return when(numberClass.indexOfFirst { it == a::class || it == b::class }) {
             0 -> a.toDouble() + b.toDouble()
             1 -> a.toFloat() + b.toFloat()
             2 -> a.toLong() + b.toLong()
@@ -16,9 +17,9 @@ class AddOperation: AbstractOperation {
     }
 }
 
-class SubtractOperation: AbstractOperation{
+class SubtractOperation: AbstractOperation {
     override fun operation(a: Number, b: Number): Number {
-        return when(Calculator2.numberClass.indexOfFirst { it == a::class || it == b::class }) {
+        return when(numberClass.indexOfFirst { it == a::class || it == b::class }) {
             0 -> a.toDouble() - b.toDouble()
             1 -> a.toFloat() - b.toFloat()
             2 -> a.toLong() - b.toLong()
@@ -32,7 +33,7 @@ class SubtractOperation: AbstractOperation{
 
 class MultiplyOperation: AbstractOperation {
     override fun operation(a: Number, b: Number): Number {
-        return when(Calculator2.numberClass.indexOfFirst { it == a::class || it == b::class }) {
+        return when(numberClass.indexOfFirst { it == a::class || it == b::class }) {
             0 -> a.toDouble() * b.toDouble()
             1 -> a.toFloat() * b.toFloat()
             2 -> a.toLong() * b.toLong()
@@ -46,7 +47,7 @@ class MultiplyOperation: AbstractOperation {
 
 class DivideOperation: AbstractOperation {
     override fun operation(a: Number, b: Number): Number {
-        return when(Calculator2.numberClass.indexOfFirst { it == a::class || it == b::class }) {
+        return when(numberClass.indexOfFirst { it == a::class || it == b::class }) {
             0 -> a.toDouble() / b.toDouble()
             1 -> a.toFloat() / b.toFloat()
             2 -> a.toLong() / b.toLong()
